@@ -1,3 +1,6 @@
+package potion;
+
+import java.util.Calendar;
 import java.util.Date;
 
 public class PriseRelle {
@@ -5,9 +8,8 @@ public class PriseRelle {
 	int dose;
 	PriseTheorique prise;
 
-	public PriseRelle(Date dateDePrise, PriseTheorique prise, int dose) {
-		super();
-		this.dateDePrise = dateDePrise;
+	public PriseRelle(PriseTheorique prise, int dose) {
+		this.dateDePrise = Calendar.getInstance().getTime();
 		this.prise = prise;
 		this.dose = dose;
 	}

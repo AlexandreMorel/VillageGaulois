@@ -1,11 +1,9 @@
-import java.util.HashMap;
-import java.util.Map;
+package potion;
 
 public class PriseTheorique {
 	int poids;
 	int age;
 	int doseTheorique;
-	private Map<Potion, Integer> interval = new HashMap<>();
 
 	public PriseTheorique(int poids, int age, int doseTheorique) {
 		super();
@@ -24,9 +22,5 @@ public class PriseTheorique {
 
 	public int getDoseTheorique() {
 		return doseTheorique;
-	}
-
-	public int getInterval(Potion potion) {
-		return this.interval.getOrDefault(potion, 0);
 	}
 }

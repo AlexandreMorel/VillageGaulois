@@ -1,3 +1,9 @@
+package village;
+
+import combat.Combat;
+import combat.PlanDeBataille;
+import potion.PriseRelle;
+
 import java.util.Calendar;
 
 public class Habitant {
@@ -32,7 +38,7 @@ public class Habitant {
 	}
 
 	public void convoquer(Combat combat) {
-		 System.out.println("Tu es convoqu� pour le combat: " + combat.getNom());
+		 System.out.println("Tu es convoqué pour le combat: " + combat.getNom());
 	}
 
 	public void prendrePotion(PriseRelle priseReelle) {
@@ -40,10 +46,10 @@ public class Habitant {
 		System.out.println("J'ai pris la potion");
 	}
 	public void prevenirProchainCombat(Combat combat) {
-		System.out.println("Le prochain combat � lieu dans peu de temps");
+		System.out.println("Le prochain combat a lieu dans peu de temps");
 	}
 	public void RecevoirPlan(Combat combat, PlanDeBataille plan) {
-		// M�thode qui permet � un habitant de recevoir le plan de bataille pour un combat donn�
+		// Méthode qui permet à un habitant de recevoir le plan de bataille pour un combat donné
 	}
 
 	public int getDateDeNaissance() {

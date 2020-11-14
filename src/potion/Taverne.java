@@ -1,3 +1,7 @@
+package potion;
+
+import village.Habitant;
+import village.Village;
 
 import java.util.*;
 
@@ -22,18 +26,15 @@ public class Taverne {
 		Habitant habitant = Objects.requireNonNull(this.village.getHabitants(nnig), "L'habitant n'existe pas !");
 		PriseTheorique priseTheorique = Objects.requireNonNull(this.potions.get(nomPotion), "La potion n'existe pas !")
 											   .getPriseTheorique(habitant.getPoids(), habitant.getAge());
-		PriseRelle priseReelle = new PriseRelle(Calendar.getInstance().getTime(), priseTheorique, dose);
+		PriseRelle priseReelle = new PriseRelle(priseTheorique, dose);
 		habitant.prendrePotion(priseReelle);
 	}
 
-	public int getInterval(String nnig, String nomPotion) {
-		Potion potion = Objects.requireNonNull(this.potions.get(nomPotion), "La potion n'existe pas");
+	public int getInterval(String nomPotion1, String nomPotion2) {
+		Potion potion1 = Objects.requireNonNull(this.potions.get(nomPotion1), "La potion 1 n'existe pas");
+		Potion potion2 = Objects.requireNonNull(this.potions.get(nomPotion2), "La potion 2 n'existe pas");
 
-		return Optional.ofNullable(this.village.getHabitants(nnig))
-				.map(Habitant::getPotionActive)
-				.map(PriseRelle::getPrise)
-				.map(prise -> prise.getInterval(potion))
-				.orElse(0);
+		return potion1.getInterval(potion2);
 	}
 
 
