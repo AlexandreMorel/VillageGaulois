@@ -21,5 +21,14 @@ public class Musee {
 			System.out.println("Ce casque n'est pas au mus�e");
 		}
 	}
+	
+	public Casque getCasque(UUID numSerie) {
+		for(Casque casque : this.listeCasques) {
+			if(casque.getUuid() == numSerie) {
+				return casque;
+			}
+		}
+		return null;
+	}
 
 }
