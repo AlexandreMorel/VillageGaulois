@@ -1,3 +1,8 @@
+package musee;
+
+import combat.Combat;
+import village.Habitant;
+
 import java.util.UUID;
 
 public class Casque {

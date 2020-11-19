@@ -1,24 +1,27 @@
+package musee;
+
+import village.Habitant;
+
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Musee {
-	ArrayList<Casque> listeCasques = new ArrayList<Casque>(); 
+	ArrayList<Casque> listeCasques = new ArrayList<Casque>();
 
-	public void ajouterCasque(Casque casque,Habitant hab) {
+	public void ajouterCasque(Casque casque, Habitant hab) {
 		listeCasques.add(casque);
 	}
-	
+
 	public void retirerCasque(Casque casque) {
-		if(listeCasques.contains(casque)) 
+		if(listeCasques.contains(casque))
 		{
 			listeCasques.remove(casque);
 		}
-		else 
+		else
 		{
-			System.out.println("Ce casque n'est pas au musée");
+			System.out.println("Ce casque n'est pas au musï¿½e");
 		}
 	}
-
+	
 	public Casque getCasque(UUID numSerie) {
 		for(Casque casque : this.listeCasques) {
 			if(casque.getUuid() == numSerie) {
@@ -27,4 +30,5 @@ public class Musee {
 		}
 		return null;
 	}
+
 }

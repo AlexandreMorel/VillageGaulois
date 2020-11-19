@@ -1,12 +1,10 @@
-import java.util.HashMap;
-import java.util.Map;
+package potion;
 
 public class PriseTheorique {
 	int poids;
 	int age;
 	int doseTheorique;
-	private Map<Potion, Integer> intervalle = new HashMap<>();
-	
+
 	public PriseTheorique(int poids, int age, int doseTheorique) {
 		super();
 		this.poids = poids;
@@ -18,16 +16,8 @@ public class PriseTheorique {
 		return poids;
 	}
 
-	public void setPoids(int poids) {
-		this.poids = poids;
-	}
-
 	public int getAge() {
 		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
 	}
 
 	public int getDoseTheorique() {

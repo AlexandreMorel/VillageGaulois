@@ -1,3 +1,9 @@
+package village;
+
+import combat.Combat;
+import combat.PlanDeBataille;
+import potion.PriseRelle;
+
 import java.util.Calendar;
 
 public class Habitant {
@@ -12,8 +18,8 @@ public class Habitant {
 	int force;
 	int endurance;
 	int intelligence;
-	Potion potionActive;
-	
+	PriseRelle potionActive;
+
 
 	public Habitant(String nNIG, String nom, String specialite, int dateDeNaissance, String statusCivique, String voie,
 					String numeroVoie, int poids, int force, int endurance, int intelligence) {
@@ -30,20 +36,20 @@ public class Habitant {
 		this.endurance = endurance;
 		this.intelligence = intelligence;
 	}
-	
+
 	public void convoquer(Combat combat) {
-		 System.out.println("Tu es convoqué pour le combat: " + combat.getNom());
+		 System.out.println("Tu es convoquÃ© pour le combat: " + combat.getNom());
 	}
-	
+
 	public void prendrePotion(PriseRelle priseReelle) {
-		// A faire 
+		this.potionActive = priseReelle;
 		System.out.println("J'ai pris la potion");
 	}
 	public void prevenirProchainCombat(Combat combat) {
-		System.out.println("Le prochain combat à lieu dans peu de temps");
+		System.out.println("Le prochain combat a lieu dans peu de temps");
 	}
 	public void RecevoirPlan(Combat combat, PlanDeBataille plan) {
-		// Méthode qui permet à un habitant de recevoir le plan de bataille pour un combat donné 
+		// MÃ©thode qui permet Ã  un habitant de recevoir le plan de bataille pour un combat donnÃ©
 	}
 
 	public int getDateDeNaissance() {
@@ -62,16 +68,12 @@ public class Habitant {
 		this.poids = poids;
 	}
 
-	public Potion getPotionActive() {
+	public PriseRelle getPotionActive() {
 		return potionActive;
 	}
 
-	public void setPotionActive(Potion potionActive) {
-		this.potionActive = potionActive;
-	}
-	
 	public int getAge() {
 		return Calendar.getInstance().get(Calendar.YEAR) - this.dateDeNaissance;
 	}
-	
+
 }

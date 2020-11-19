@@ -1,13 +1,17 @@
+package combat;
+
+import village.Habitant;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Combat {
-	ArrayList<Habitant> combattants = new ArrayList<Habitant>(); 
+	ArrayList<Habitant> combattants = new ArrayList<Habitant>();
 	String lieu;
 	Date dateDuDebut;
 	Date dateDeFin;
 	String nom;
-	
+
 	public Combat(String lieu, Date dateDuDebut, Date dateDeFin, String nom) {
 		super();
 		this.lieu = lieu;
@@ -15,14 +19,14 @@ public class Combat {
 		this.dateDeFin = dateDeFin;
 		this.nom = nom;
 	}
-	
+
 	public void inscrire(Habitant hab) {
-		
-		if (combattants.contains(hab)) 
+
+		if (combattants.contains(hab))
 		{
-			System.out.println("Cette personne est déjà enregistrée");
+			System.out.println("Cette personne est dï¿½jï¿½ enregistrï¿½e");
 		}
-		else 
+		else
 		{
 			combattants.add(hab);
 		}

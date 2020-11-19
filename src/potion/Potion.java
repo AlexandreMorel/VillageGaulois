@@ -1,5 +1,8 @@
+package potion;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Potion {
 	String nom;
@@ -7,8 +10,9 @@ public class Potion {
 	String prises;
 	HashMap<String, String> prisePotion = new HashMap<String, String>();
 	ArrayList <PriseTheorique> listePriseTheorique = new ArrayList<>();
-	
-	public Potion(String nom, int effet, String prises) {
+	private Map<Potion, Integer> interval = new HashMap<>();
+
+	public Potion(String nom, String effet, String prises) {
 		super();
 		this.nom = nom;
 		this.effet = effet;
@@ -39,7 +43,7 @@ public class Potion {
 		}
 		return null;
 	}
-	
+
 	public int getDoseTheorique(int poids, int age) {
 		return this.listePriseTheorique.stream()
 				.filter(prise -> prise.getAge()==age)
@@ -47,11 +51,11 @@ public class Potion {
 				.findFirst()
 				.map(PriseTheorique::getDoseTheorique)
 				.orElse(0);
-		
+
 	}
 
-	public void setPrises(String prises) {
-		this.prises = prises;
-	}	
+	public int getInterval(Potion potion) {
+		return this.interval.getOrDefault(potion, 0);
+	}
 
 }
