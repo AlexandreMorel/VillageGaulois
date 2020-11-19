@@ -36,4 +36,16 @@ public class Combat {
 		this.nom = nom;
 	}
 	
+	
+	public void convoquerMembre() {
+		for(Habitant hab : this.combattants) {
+			hab.convoquer();
+		}
+	}
+	
+	public void envoyerPlan() {
+		for(Habitant hab : this.combattants) {
+			hab.recevoirPlan()
+		}
+	}
 }

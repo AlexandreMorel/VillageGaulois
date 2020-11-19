@@ -3,12 +3,12 @@ import java.util.HashMap;
 
 public class Potion {
 	String nom;
-	String effet; //Temps durant laquelle la potion est active
+	int effet; //Temps durant laquelle la potion est active
 	String prises;
 	HashMap<String, String> prisePotion = new HashMap<String, String>();
 	ArrayList <PriseTheorique> listePriseTheorique = new ArrayList<>();
 	
-	public Potion(String nom, String effet, String prises) {
+	public Potion(String nom, int effet, String prises) {
 		super();
 		this.nom = nom;
 		this.effet = effet;
@@ -23,11 +23,11 @@ public class Potion {
 		this.nom = nom;
 	}
 
-	public String getEffet() {
+	public int getEffet() {
 		return effet;
 	}
 
-	public void setEffet(String effet) {
+	public void setEffet(int effet) {
 		this.effet = effet;
 	}
 

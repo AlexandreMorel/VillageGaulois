@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Musee {
 	ArrayList<Casque> listeCasques = new ArrayList<Casque>(); 
@@ -18,4 +19,12 @@ public class Musee {
 		}
 	}
 
+	public Casque getCasque(UUID numSerie) {
+		for(Casque casque : this.listeCasques) {
+			if(casque.getUuid() == numSerie) {
+				return casque;
+			}
+		}
+		return null;
+	}
 }
