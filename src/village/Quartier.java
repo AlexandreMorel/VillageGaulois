@@ -4,6 +4,8 @@ import village.Habitant;
 
 import java.util.ArrayList;
 
+import combat.Combat;
+
 public class Quartier {
 	String drapeau;//photo
 	String nom;
@@ -15,9 +17,11 @@ public class Quartier {
 		this.nom = nom;
 	}
 
-	public void prevenirProchainCombat() {
-		// a faire
-		System.out.println("Il y a un combat dans pas longtemps !!");
+	public void prevenirProchainCombat(Combat combat) {
+	
+		for(Habitant hab : this.habitants) {
+			hab.prevenirProchainCombat(combat);
+		}
 
 	}
 

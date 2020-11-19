@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Potion {
 	String nom;
-	int effet; //Temps durant laquelle la potion est active
+	String effet; //Temps durant laquelle la potion est active
 	String prises;
 	HashMap<String, String> prisePotion = new HashMap<String, String>();
 	ArrayList <PriseTheorique> listePriseTheorique = new ArrayList<>();
@@ -27,11 +27,11 @@ public class Potion {
 		this.nom = nom;
 	}
 
-	public int getEffet() {
+	public String getEffet() {
 		return effet;
 	}
 
-	public void setEffet(int effet) {
+	public void setEffet(String effet) {
 		this.effet = effet;
 	}
 

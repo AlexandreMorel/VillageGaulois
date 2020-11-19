@@ -3,6 +3,7 @@ package musee;
 import village.Habitant;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Musee {
 	ArrayList<Casque> listeCasques = new ArrayList<Casque>();

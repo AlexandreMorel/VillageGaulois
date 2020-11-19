@@ -45,11 +45,13 @@ public class Habitant {
 		this.potionActive = priseReelle;
 		System.out.println("J'ai pris la potion");
 	}
+	
 	public void prevenirProchainCombat(Combat combat) {
 		System.out.println("Le prochain combat a lieu dans peu de temps");
 	}
-	public void RecevoirPlan(Combat combat, PlanDeBataille plan) {
-		// Méthode qui permet à un habitant de recevoir le plan de bataille pour un combat donné
+	
+	public void recevoirPlan(Combat combat, PlanDeBataille plan) {
+		combat.envoyerPlan(plan);
 	}
 
 	public int getDateDeNaissance() {

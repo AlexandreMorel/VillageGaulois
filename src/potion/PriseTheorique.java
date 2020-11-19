@@ -28,7 +28,4 @@ public class PriseTheorique {
 		this.doseTheorique = doseTheorique;
 	}
 	
-	//public int getIntervalle(Potion potion) {
-	//}
-	
 }

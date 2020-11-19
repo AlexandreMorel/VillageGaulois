@@ -1,6 +1,7 @@
 package village;
 
 import combat.Combat;
+import combat.PlanDeBataille;
 import musee.Musee;
 import potion.Taverne;
 
@@ -19,7 +20,9 @@ public class Village {
 	}
 
 	public void prevenirProchainCombat(String nomQuartier, String nomCombat) {
-
+		Quartier quartier = this.quartiers.get(nomQuartier);
+		Combat combat = this.combats.get(nomCombat);
+		quartier.prevenirProchainCombat(combat);
 	}
 
 	public Habitant getHabitants(String nnig) {
@@ -30,8 +33,20 @@ public class Village {
 		return this.combats.get(nom);
 	}
 
+	public void inscrireCombat(String nnig, String nomCombat) {
+		Habitant hab = this.habitants.get(nnig);
+		Combat combat = this.combats.get(nomCombat);
+		combat.inscrire(hab);
+	}
+	
+	public void envoyerPlanDeBataille(PlanDeBataille plan, String nomCombat) {
+		Combat combat = this.combats.get(nomCombat);
+		combat.envoyerPlan(plan);
+	}
 
-
-
+	public void convoquerMembresCombat(String nomCombat) {
+		Combat combat = this.combats.get(nomCombat);
+		combat.convoquerMembre();
+	}
 
 }

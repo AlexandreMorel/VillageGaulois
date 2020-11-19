@@ -43,13 +43,14 @@ public class Combat {
 	
 	public void convoquerMembre() {
 		for(Habitant hab : this.combattants) {
-			hab.convoquer();
+			hab.convoquer(this);
 		}
 	}
 	
-	public void envoyerPlan() {
+	public void envoyerPlan(PlanDeBataille plan) {
 		for(Habitant hab : this.combattants) {
-			hab.recevoirPlan()
+			hab.recevoirPlan(this, plan);
 		}
 	}
+	
 }
